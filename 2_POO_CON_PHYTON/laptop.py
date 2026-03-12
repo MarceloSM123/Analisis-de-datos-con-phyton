@@ -10,9 +10,18 @@ class laptop:
         return self.costo+self.impuestos
     def valorDescuento(self,descuento):
         return (self.costo*descuento)/100
-    
+   #METODOS ESTATICOS EN LA CLASE
+    @staticmethod
+    def compararCosto(Laptop1,Laptop2):
+        if Laptop1.costo==Laptop2.costo:
+            return "Los costos son iguales"
+        else:
+            return "los costos son diferentes"
+    #METODO DE CLASE
+    @classmethod
+    def    asusLaptop(cls,costo):
+        marca="asus"
+        procesador="i5" 
+        memoria=16
+        return cls(marca,procesador,memoria,costo)
 
-laptopPepito=laptop("lenovo", "intel i7", "100gb", 1000, 120)
-print(laptopPepito.__dict__)
-print(laptopPepito.valorFinal())
-print(laptopPepito.valorDescuento(10))
